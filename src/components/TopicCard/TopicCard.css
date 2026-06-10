@@ -1,0 +1,91 @@
+.topic-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1.5px solid #e2e8f0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.topic-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+  transform: translateY(-1px);
+}
+
+.topic-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+}
+
+.topic-card--blue::before  { background: #1d4ed8; }
+.topic-card--blue .topic-card__icon-wrap  { background: #eff6ff; }
+.topic-card--blue .topic-card__icon-wrap svg  { color: #1d4ed8; }
+.topic-card--blue .topic-card__btn  { background: #1d4ed8; }
+
+.topic-card--teal::before  { background: #0891b2; }
+.topic-card--teal .topic-card__icon-wrap  { background: #ecfeff; }
+.topic-card--teal .topic-card__icon-wrap svg  { color: #0891b2; }
+.topic-card--teal .topic-card__btn  { background: #0891b2; }
+
+.topic-card--violet::before  { background: #7c3aed; }
+.topic-card--violet .topic-card__icon-wrap  { background: #f5f3ff; }
+.topic-card--violet .topic-card__icon-wrap svg  { color: #7c3aed; }
+.topic-card--violet .topic-card__btn  { background: #7c3aed; }
+
+.topic-card__icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.topic-card__text {
+  flex: 1;
+}
+
+.topic-card__title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+  letter-spacing: -0.4px;
+}
+
+.topic-card__subtopics {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.topic-card__subtopics span + span::before {
+  content: ' · ';
+  color: #cbd5e1;
+}
+
+.topic-card__btn {
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  letter-spacing: -0.3px;
+  transition: opacity 0.15s ease;
+}
+
+.topic-card__btn:hover {
+  opacity: 0.88;
+}
