@@ -16,7 +16,7 @@ export default function MainScreen({ completedTopics, onStart, onReset }) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-[28px] font-extrabold text-ink sm:text-[34px]">주제를 선택하세요</h1>
-          <p className="mt-2 text-[15px] text-text-secondary sm:text-base">
+          <p className="mt-2 mb-10 text-[15px] text-text-secondary sm:text-base">
             체험하신 내용을 퀴즈로 확인해 보세요. 1,000점을 넘기면 도장을 받아요!
           </p>
         </div>
