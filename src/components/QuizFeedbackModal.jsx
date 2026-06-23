@@ -61,8 +61,8 @@ export default function QuizFeedbackModal({
           type="button"
           onClick={onNext}
           autoFocus
-          className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl py-4 text-lg font-bold text-white transition hover:brightness-95"
-          style={{ backgroundColor: topic.color }}
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl py-4 text-lg font-bold transition hover:brightness-95"
+          style={{ backgroundColor: topic.color, color: topic.onColor }}
         >
           {isLast ? '결과 보기' : '다음 문제'}
           <ArrowRight className="h-5 w-5" strokeWidth={2.4} />

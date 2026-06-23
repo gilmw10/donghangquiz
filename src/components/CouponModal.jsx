@@ -27,7 +27,7 @@ export default function CouponModal({ onClose }) {
             <span
               key={t.id}
               className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-bold"
-              style={{ backgroundColor: t.tint, color: t.color }}
+              style={{ backgroundColor: t.tint, color: t.accent }}
             >
               <Check className="h-4 w-4" strokeWidth={3} />
               {t.name.replace(/\s.*$/, '')}

@@ -44,7 +44,7 @@ export default function QuizScreen({ topic, questions, onFinish }) {
       <div className="flex items-center justify-between">
         <span
           className="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-bold"
-          style={{ backgroundColor: topic.tint, color: topic.color }}
+          style={{ backgroundColor: topic.tint, color: topic.accent }}
         >
           <TopicIcon iconKey={topic.iconKey} className="h-4 w-4" />
           {topic.name}

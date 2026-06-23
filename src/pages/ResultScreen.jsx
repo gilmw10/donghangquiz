@@ -34,7 +34,7 @@ export default function ResultScreen({ topic, result, onRetry, onHome }) {
         <div className="flex items-end gap-1.5">
           <span
             className="text-4xl font-extrabold sm:text-[46px]"
-            style={{ color: passed ? topic.color : '#475569' }}
+            style={{ color: passed ? topic.accent : '#475569' }}
           >
             {score.toLocaleString()}
           </span>
@@ -56,8 +56,8 @@ export default function ResultScreen({ topic, result, onRetry, onHome }) {
             <button
               type="button"
               onClick={onHome}
-              className="flex items-center justify-center gap-2 rounded-xl px-9 py-4 text-base font-bold text-white transition hover:brightness-95"
-              style={{ backgroundColor: topic.color }}
+              className="flex items-center justify-center gap-2 rounded-xl px-9 py-4 text-base font-bold transition hover:brightness-95"
+              style={{ backgroundColor: topic.color, color: topic.onColor }}
             >
               다른 주제 선택하기
               <ArrowRight className="h-[18px] w-[18px]" strokeWidth={2.4} />
@@ -76,8 +76,8 @@ export default function ResultScreen({ topic, result, onRetry, onHome }) {
             <button
               type="button"
               onClick={onRetry}
-              className="flex items-center justify-center gap-2 rounded-xl px-9 py-4 text-base font-bold text-white transition hover:brightness-95"
-              style={{ backgroundColor: topic.color }}
+              className="flex items-center justify-center gap-2 rounded-xl px-9 py-4 text-base font-bold transition hover:brightness-95"
+              style={{ backgroundColor: topic.color, color: topic.onColor }}
             >
               <RotateCcw className="h-[18px] w-[18px]" strokeWidth={2.2} />
               다시 풀기

@@ -1,4 +1,3 @@
-// 빨간 인장 느낌의 '통과' 도장. 크기/글자 크기는 className으로 조절.
 export default function PassStamp({ className = '', label = '통과' }) {
   return (
     <span

@@ -13,7 +13,7 @@ export default function TopicCard({ topic, completed, onStart }) {
           className="flex h-14 w-14 items-center justify-center rounded-2xl"
           style={{ backgroundColor: topic.tint }}
         >
-          <TopicIcon iconKey={topic.iconKey} className="h-7 w-7" style={{ color: topic.color }} />
+          <TopicIcon iconKey={topic.iconKey} className="h-7 w-7" style={{ color: topic.accent }} />
         </span>
 
         <h3 className="text-xl font-extrabold text-ink sm:text-[22px]">{topic.name}</h3>
@@ -33,8 +33,8 @@ export default function TopicCard({ topic, completed, onStart }) {
         <button
           type="button"
           onClick={() => onStart(topic)}
-          className="mt-1 flex items-center justify-center gap-2 rounded-xl py-3.5 text-base font-bold text-white transition hover:brightness-95"
-          style={{ backgroundColor: topic.color }}
+          className="mt-1 flex items-center justify-center gap-2 rounded-xl py-3.5 text-base font-bold transition hover:brightness-95"
+          style={{ backgroundColor: topic.color, color: topic.onColor }}
         >
           {completed ? '다시 풀기' : '시작하기'}
           <ArrowRight className="h-[18px] w-[18px]" strokeWidth={2.4} />
