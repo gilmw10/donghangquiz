@@ -1,5 +1,12 @@
-import { Coffee, Check, Gift } from 'lucide-react';
+import { Coffee, Check } from 'lucide-react';
 import { TOPICS } from '../data/topics';
+
+// 실제 규격이 아닌, 느낌만 내는 가짜 바코드 (검정 막대 폭 패턴)
+const BARCODE = [
+  3, 1, 1, 2, 1, 3, 1, 1, 2, 2, 1, 1, 3, 1, 2, 1, 1, 2, 1, 3,
+  1, 1, 2, 1, 2, 3, 1, 1, 2, 1, 1, 3, 1, 2, 1, 1, 2, 1, 3, 1,
+  1, 2, 1, 1, 3, 1, 2, 1, 1, 2,
+];
 
 export default function CouponModal({ onClose }) {
   return (
@@ -36,37 +43,45 @@ export default function CouponModal({ onClose }) {
         </div>
 
         {/* 쿠폰 카드 */}
-        <div className="mt-6 flex items-center gap-4 rounded-2xl border-[1.5px] border-amber bg-[#fffbeb] p-4 text-left">
-          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber">
-            <Coffee className="h-7 w-7 text-white" strokeWidth={2.2} />
-          </span>
-          <div className="flex-1">
-            <p className="text-base font-extrabold text-ink sm:text-lg">아메리카노 1잔 무료 교환권</p>
-            <p className="text-xs text-text-secondary sm:text-sm">
-              서울디지털동행플라자 카페에서 사용 가능
+        <div className="mt-6 flex flex-col gap-3 rounded-2xl border-[1.5px] border-amber bg-[#fffbeb] p-4 text-left">
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber">
+              <Coffee className="h-6 w-6 text-white" strokeWidth={2.2} />
+            </span>
+            <div className="flex-1">
+              <p className="text-sm font-bold text-ink">아메리카노 1잔 무료 교환권</p>
+              <p className="text-xs text-text-secondary">서울디지털동행플라자 카페에서 사용 가능</p>
+            </div>
+            <span className="rounded-full bg-amber px-3 py-1.5 text-xs font-extrabold text-white">
+              무료
+            </span>
+          </div>
+
+          {/* 가짜 바코드 */}
+          <div className="rounded-xl bg-white px-4 py-3">
+            <div className="flex h-12 items-stretch justify-center gap-px">
+              {BARCODE.map((w, i) => (
+                <span
+                  key={i}
+                  className={i % 2 === 0 ? 'bg-ink' : 'bg-white'}
+                  style={{ width: `${w * 2}px` }}
+                />
+              ))}
+            </div>
+            <p className="mt-1.5 text-center text-xs tracking-[0.3em] text-text-muted">
+              DDHP-2026-004519
             </p>
           </div>
-          <span className="rounded-full bg-amber px-3.5 py-2 text-sm font-extrabold text-white">
-            무료
-          </span>
         </div>
 
         {/* 버튼 */}
-        <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+        <div className="mt-7 flex justify-center">
           <button
             type="button"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 rounded-xl bg-brand px-9 py-3.5 text-base font-bold text-white transition hover:brightness-95"
+            className="rounded-xl bg-brand px-16 py-3.5 text-base font-bold text-white transition hover:brightness-95"
           >
-            <Gift className="h-[18px] w-[18px]" strokeWidth={2.4} />
-            쿠폰 받기
-          </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded-xl border-[1.5px] border-border-soft bg-white px-9 py-3.5 text-base font-bold text-text-secondary transition hover:bg-bg-soft"
-          >
-            닫기
+            확인
           </button>
         </div>
       </div>

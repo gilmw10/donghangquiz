@@ -1,9 +1,10 @@
-import { Stamp, RotateCcw } from 'lucide-react';
+import { Stamp, RotateCcw, Gift } from 'lucide-react';
 import { TOPICS } from '../data/topics';
 import TopicCard from '../components/TopicCard';
 
-export default function MainScreen({ completedTopics, onStart, onReset }) {
+export default function MainScreen({ completedTopics, onStart, onReset, onShowCoupon }) {
   const doneCount = completedTopics.length;
+  const allDone = doneCount === TOPICS.length;
 
   const handleReset = () => {
     if (window.confirm('통과 기록과 도장을 모두 초기화할까요?')) {
@@ -21,10 +22,21 @@ export default function MainScreen({ completedTopics, onStart, onReset }) {
           </p>
         </div>
         <div className="flex items-center gap-2 self-start sm:self-auto">
-          <div className="inline-flex items-center gap-2 rounded-xl border-[1.5px] border-border-soft bg-bg-soft px-4 py-3">
-            <Stamp className="h-5 w-5 text-stamp" strokeWidth={2.2} />
-            <span className="font-bold text-ink">완료 {doneCount} / 3</span>
-          </div>
+          {allDone ? (
+            <button
+              type="button"
+              onClick={onShowCoupon}
+              className="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-3 font-bold text-white transition hover:brightness-95"
+            >
+              <Gift className="h-5 w-5" strokeWidth={2.2} />
+              완료 {doneCount} / 3 · 쿠폰 다시 보기
+            </button>
+          ) : (
+            <div className="inline-flex items-center gap-2 rounded-xl border-[1.5px] border-border-soft bg-bg-soft px-4 py-3">
+              <Stamp className="h-5 w-5 text-stamp" strokeWidth={2.2} />
+              <span className="font-bold text-ink">완료 {doneCount} / 3</span>
+            </div>
+          )}
           {doneCount > 0 && (
             <button
               type="button"

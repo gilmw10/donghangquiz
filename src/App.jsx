@@ -75,6 +75,8 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
+  const openCoupon = () => setShowCoupon(true);
+
   const resetProgress = () => {
     setCompleted([]);
     setCouponClaimed(false);
@@ -102,7 +104,12 @@ export default function App() {
       <AppHeader onHome={goHome} />
 
       {screen === 'main' && (
-        <MainScreen completedTopics={completed} onStart={startQuiz} onReset={resetProgress} />
+        <MainScreen
+          completedTopics={completed}
+          onStart={startQuiz}
+          onReset={resetProgress}
+          onShowCoupon={openCoupon}
+        />
       )}
       {screen === 'quiz' && topic && (
         <QuizScreen topic={topic} questions={questions} onFinish={finishQuiz} />

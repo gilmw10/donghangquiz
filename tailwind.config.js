@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         brand: '#1d4ed8',
-        'brand-soft': '#98b1f4',
+        'brand-soft': '#e57777',
         kiosk: '#1d4ed8',
         phone: '#0891b2',
         leisure: '#7c3aed',
